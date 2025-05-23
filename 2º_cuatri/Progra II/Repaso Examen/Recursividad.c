@@ -50,9 +50,6 @@ float distPlaneta(int planeta) {
     else if (planeta == 2) {
         return ((4+3) / 10.0);
     }
-    else if (planeta == 3) {
-        return ((4+6) / 10.0);
-    }
     else {
         return (4 + (2 * (10* distPlaneta(planeta - 1) - 4)) / 10.0); // al ser el doble del anterior, se hace 4+2*bi (que es 10*di-4, se saca de la fórmula), entre 10
     }
@@ -113,8 +110,8 @@ char* Reverso(char arr[], int inicio, int final){
     if(inicio>=final){
         return arr;
     }
-    char temp=arr[final-1];
-    arr[final-1]=arr[inicio];
+    char temp=arr[final];
+    arr[final]=arr[inicio];
     arr[inicio]=temp;
     return Reverso(arr,inicio+1,final-1);
 }
@@ -141,14 +138,14 @@ int main() {
     int suma_digitos = sumaDigitos(12345);
     printf("Resultado de la suma: %d\n", suma_digitos);
 
-    int raiz = raizDigital(123);
+    int raiz = raizDigital(1729);
     printf("Raíz digital: %d\n", raiz);
 
     int pascal = Pascal(7,2);
     printf("Pascal: %d\n", pascal);
 
     char inversa[] = "hola";
-    Reverso(inversa,0,4);
+    Reverso(inversa,0,3);
     printf("Palabra del revés: %s\n", inversa);
 
     return 0;
